@@ -13,6 +13,7 @@ import java.util.List;
 
 public class SocnetAdapter extends RecyclerView.Adapter<SocnetAdapter.ViewHolder> {
     private String[] data;
+    private static OnItemClickListener itemClickListener;
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView textView;
