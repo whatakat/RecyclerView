@@ -3,6 +3,7 @@ package com.bankmtk.recyclerview;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,7 +20,18 @@ public class SocnetAdapter extends RecyclerView.Adapter<SocnetAdapter.ViewHolder
         public ViewHolder(TextView v){
             super(v);
             textView = v;
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (itemClickListener != null){
+                        itemClickListener.onItemClick(v, getAdapterPosition());
+                    }
+                }
+            });
         }
+    }
+    public interface OnItemClickListener{
+        void onItemClick(View view, int position);
     }
     public SocnetAdapter(String[] data){
         this.data = data;
