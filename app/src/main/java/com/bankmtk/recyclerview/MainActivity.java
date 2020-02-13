@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
     private String[] data = {"One", "Two","Three","Four"};
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         SocnetAdapter adapter = new SocnetAdapter(data);
         recyclerView.setAdapter(adapter);
 
-
+        final Activity that = this;
 
 
     }
