@@ -34,6 +34,10 @@ public class SocnetAdapter extends RecyclerView.Adapter<SocnetAdapter.ViewHolder
     public interface OnItemClickListener{
         void onItemClick(View view, int position);
     }
+    public void SetOnItemClickListener(OnItemClickListener itemClickListener){
+        this.itemClickListener = itemClickListener;
+
+    }
     public SocnetAdapter(String[] data){
         this.data = data;
     }
