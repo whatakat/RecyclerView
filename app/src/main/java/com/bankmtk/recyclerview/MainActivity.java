@@ -8,6 +8,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private String[] data = {"One", "Two","Three","Four"};
@@ -31,7 +33,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         final Activity that = this;
-
-
+        adapter.SetOnItemClickListener(new SocnetAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Toast.makeText(that, String.format("%s - %d",((TextView)view).getText(),
+                        position),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
